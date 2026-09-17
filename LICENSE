@@ -1,0 +1,67 @@
+BILINEAR QUANTUM PROPRIETARY LICENSE AGREEMENT (BQPLA)
+Version 1.0, 17 September 2026
+
+Copyright (c) 2026 Nguyen Minh Tuan and Bui Phi Hung.
+All rights reserved.
+
+1. Permission
+
+Subject to this License, the copyright holders grant you a limited,
+non-exclusive, non-transferable, non-sublicensable, revocable license to
+download, install, and execute an unmodified compiled copy of Bilinear Quantum
+solely through its documented public Python interface for lawful research,
+education, evaluation, and internal use.
+
+You may make only the copies technically necessary to install and execute the
+compiled package on systems that you control.
+
+2. Restrictions
+
+Except with prior written permission from the copyright holders, you may not:
+
+(a) copy, publish, redistribute, resell, sublicense, rent, lease, host, or make
+the Software available to another person or as a service;
+
+(b) modify, adapt, translate, or create derivative works from the Software;
+
+(c) reverse engineer, decompile, disassemble, decode, extract, reconstruct, or
+otherwise attempt to discover implementation source, private configuration,
+model internals, or unpublished materials;
+
+(d) remove or alter copyright, attribution, license, or proprietary notices;
+or
+
+(e) use the Software unlawfully or to infringe third-party rights.
+
+No patent, trademark, source-code, publication, dataset, model-weight, or other
+right is granted except the limited permission stated in Section 1.
+
+3. Third-party components
+
+Dependencies and other third-party components are not licensed by this
+License. They remain subject to their respective licenses and notices.
+
+4. Termination
+
+This License terminates automatically if you breach its terms. Upon
+termination, you must stop using the Software and delete all copies under your
+control, subject to applicable law.
+
+5. Disclaimer and limitation of liability
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE
+COPYRIGHT HOLDERS SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY ARISING FROM OR RELATED TO THE SOFTWARE OR ITS USE.
+
+6. Contact
+
+Requests for permissions beyond this License must be sent to:
+
+Nguyen Minh Tuan <minhtuan@ptit.edu.vn>
+Bui Phi Hung <n23dcat028@student.ptithcm.edu.vn>
+
+This license text is a project-specific notice and should be reviewed by
+qualified intellectual-property counsel before commercial reliance.
+
