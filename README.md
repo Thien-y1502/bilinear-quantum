@@ -4,12 +4,12 @@
 The interface abstracts backend selection and numerical execution behind
 consistent task constructors.
 
-This is the first public 34-task API line. Provider and hardware integrations
-remain optional and may evolve independently.
+The package defines a 34-task interface. Provider and hardware integrations are
+optional components and may evolve independently.
 
 ## Install
 
-Install the current public release from PyPI:
+Install from PyPI:
 
 ```bash
 python -m pip install --upgrade bilinear-quantum
@@ -23,7 +23,7 @@ python -m pip install path/to/bilinear_quantum-*.whl
 
 ## Five-minute usage
 
-The public call pattern is deliberately small:
+Basic usage:
 
 ```python
 import bilinear_quantum as blq
@@ -41,7 +41,7 @@ keyword configuration. A fitted model provides `predict`, `evaluate`,
 `summary`, `resources`, and `save`. The package uses NumPy by default, so the
 same call works in a local Python process or a Colab notebook.
 
-## The 34 public APIs
+## The 34 APIs
 
 | API | Typical use |
 |---|---|
@@ -97,9 +97,9 @@ clusters = blq.cluster(x_train)
 cluster_ids = clusters.predict(x_test)
 ```
 
-## Optional backend selection
+## Backend selection
 
-The public runtime exposes a backend-selection hook without requiring provider
+The runtime accepts a backend and shot configuration without requiring provider
 packages in the base install:
 
 ```python
@@ -107,7 +107,7 @@ with blq.runtime.use("aer", shots=128):
     model = blq.classify(x_train, y_train)
 ```
 
-Optional dependency groups are provided for later integration:
+Optional provider dependency groups are available:
 
 ```bash
 python -m pip install "bilinear-quantum[sim]"  # Qiskit/Aer
@@ -115,9 +115,8 @@ python -m pip install "bilinear-quantum[ibm]"  # IBM Runtime
 python -m pip install "bilinear-quantum[qi]"   # Quantum Inspire
 ```
 
-The current public release does not claim a hardware-QPU result. IBM Quantum
-and Quantum Inspire execution will be qualified separately and will not change
-the user-facing task calls.
+Hardware execution is outside the scope of this release. IBM Quantum and
+Quantum Inspire support can be added without changing the task-level calls.
 
 ## Colab smoke test
 
@@ -127,7 +126,7 @@ the user-facing task calls.
 import bilinear_quantum as blq
 print(blq.__version__)
 core = {"BLQModel", "BLQResult", "runtime"}
-print("public task count:", len([n for n in blq.__all__ if n not in core]))
+print("task count:", len([n for n in blq.__all__ if n not in core]))
 ```
 
 Use a fresh runtime when comparing versions. Keep train/test preprocessing and
