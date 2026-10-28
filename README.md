@@ -4,22 +4,21 @@
 Users import one package and call a task; provider details and research
 implementation details stay behind the package boundary.
 
-The 34-task facade is being released as `4.0.0.dev1`. It is a development
-release: the public names are stable enough for notebook experiments, while
-provider and hardware integrations remain optional and may evolve.
+This is the first public 34-task API line. Provider and hardware integrations
+remain optional and may evolve independently.
 
 ## Install
 
-After the preview is published to PyPI:
+Install the current public release from PyPI:
 
 ```bash
-python -m pip install --upgrade "bilinear-quantum==4.0.0.dev1"
+python -m pip install --upgrade bilinear-quantum
 ```
 
-To install a locally downloaded wheel before the PyPI release:
+To install a locally downloaded wheel:
 
 ```bash
-python -m pip install bilinear_quantum-4.0.0.dev1-py3-none-any.whl
+python -m pip install path/to/bilinear_quantum-*.whl
 ```
 
 ## Five-minute usage
@@ -116,14 +115,14 @@ python -m pip install "bilinear-quantum[ibm]"  # IBM Runtime
 python -m pip install "bilinear-quantum[qi]"   # Quantum Inspire
 ```
 
-The development wheel does not claim a hardware-QPU result. IBM Quantum and
-Quantum Inspire execution will be qualified separately and will not change
+The current public release does not claim a hardware-QPU result. IBM Quantum
+and Quantum Inspire execution will be qualified separately and will not change
 the user-facing task calls.
 
 ## Colab smoke test
 
 ```python
-!python -m pip install -U "bilinear-quantum==4.0.0.dev1"
+!python -m pip install -U bilinear-quantum
 
 import bilinear_quantum as blq
 print(blq.__version__)
