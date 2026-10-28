@@ -1,8 +1,8 @@
 # Bilinear Quantum
 
-`bilinear-quantum` is a task-level public facade for Bilinear Quantum models.
-Users import one package and call a task; provider details and research
-implementation details stay behind the package boundary.
+`bilinear-quantum` provides a task-oriented API for Bilinear Quantum models.
+The interface abstracts backend selection and numerical execution behind
+consistent task constructors.
 
 This is the first public 34-task API line. Provider and hardware integrations
 remain optional and may evolve independently.
@@ -133,12 +133,12 @@ print("public task count:", len([n for n in blq.__all__ if n not in core]))
 Use a fresh runtime when comparing versions. Keep train/test preprocessing and
 baseline evaluation identical when reporting experimental results.
 
-## Scope and privacy
+## Scope and reproducibility
 
-The public repository contains usage documentation only. Private research
-notes, datasets, checkpoints, evidence archives, and unpublished experiments
-are kept in the private development repository and are not part of the public
-package or this README.
+This repository documents the public API and installation contract. Algorithmic
+details, benchmark protocols, and validation artifacts should be identified by
+the exact package version and corresponding release record when results are
+reported.
 
 ## License
 
