@@ -7,9 +7,10 @@ consistent task constructors.
 The package defines a 34-task interface. Provider and hardware integrations are
 optional components and may evolve independently.
 
-Current stable release: **4.0.2**. The public package exposes the same compact
-task-level call pattern for all 34 APIs; implementation and provider details
-remain behind the public facade.
+Current stable release: **4.1.0**. The public package exposes the same compact
+task-level call pattern for all 34 APIs. Internally, every task is backed by
+the shared BQDL v5 two-register state-vector simulator core; implementation
+and provider details remain behind the public facade.
 
 ## Install
 
@@ -42,8 +43,9 @@ print(report.summary())
 
 All task constructors accept `data`, an optional `target`, and optional
 keyword configuration. A fitted model provides `predict`, `evaluate`,
-`summary`, `resources`, and `save`. The package uses NumPy by default, so the
-same call works in a local Python process or a Colab notebook.
+`summary`, `resources`, and `save`. The v5 implementation uses PyTorch and
+automatically selects CUDA when available, otherwise CPU state-vector
+simulation.
 
 ## The 34 APIs
 
@@ -130,7 +132,8 @@ python -m pip install "bilinear-quantum[qi]"   # Quantum Inspire
 ```
 
 Hardware execution is outside the scope of this release. IBM Quantum and
-Quantum Inspire support can be added without changing the task-level calls.
+Quantum Inspire support remain integration boundaries and do not change the
+task-level calls.
 
 The wheel smoke gate confirms import/call coverage for all 34 constructors; it
 is not a claim of application-dataset SOTA, QPU performance, or quantum
