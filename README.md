@@ -7,6 +7,10 @@ consistent task constructors.
 The package defines a 34-task interface. Provider and hardware integrations are
 optional components and may evolve independently.
 
+Current stable release: **4.0.2**. The public package exposes the same compact
+task-level call pattern for all 34 APIs; implementation and provider details
+remain behind the public facade.
+
 ## Install
 
 Install from PyPI:
@@ -97,6 +101,16 @@ clusters = blq.cluster(x_train)
 cluster_ids = clusters.predict(x_test)
 ```
 
+For generation and optimization contracts:
+
+```python
+generator = blq.generate(x_train)
+samples = generator.sample(16)
+
+optimizer = blq.optimize(candidates, objective_values)
+best = optimizer.optimize()
+```
+
 ## Backend selection
 
 The runtime accepts a backend and shot configuration without requiring provider
@@ -117,6 +131,10 @@ python -m pip install "bilinear-quantum[qi]"   # Quantum Inspire
 
 Hardware execution is outside the scope of this release. IBM Quantum and
 Quantum Inspire support can be added without changing the task-level calls.
+
+The wheel smoke gate confirms import/call coverage for all 34 constructors; it
+is not a claim of application-dataset SOTA, QPU performance, or quantum
+advantage.
 
 ## Colab smoke test
 
