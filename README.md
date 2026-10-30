@@ -7,7 +7,7 @@ consistent task constructors.
 The package defines a 34-task interface. Provider and hardware integrations are
 optional components and may evolve independently.
 
-Current stable release: **4.1.0**. The public package exposes the same compact
+Current stable release: **4.2.0**. The public package exposes the same compact
 task-level call pattern for all 34 APIs. Internally, every task is backed by
 the shared BQDL v5 two-register state-vector simulator core; implementation
 and provider details remain behind the public facade.
@@ -39,6 +39,16 @@ report = model.evaluate(x_test, y_test)
 
 print(prediction)
 print(report.summary())
+```
+
+For composable simulator-first neural components, use `blq.nn`:
+
+```python
+import torch
+import bilinear_quantum as blq
+
+layer = blq.nn.BilinearQuantumLayer(features=8, qubits=2)
+features = layer(torch.randn(4, 8))
 ```
 
 All task constructors accept `data`, an optional `target`, and optional
@@ -126,7 +136,7 @@ with blq.runtime.use("aer", shots=128):
 Optional provider dependency groups are available:
 
 ```bash
-python -m pip install "bilinear-quantum[sim]"  # Qiskit/Aer
+python -m pip install "bilinear-quantum[sim]"  # PennyLane/Qiskit/Aer
 python -m pip install "bilinear-quantum[ibm]"  # IBM Runtime
 python -m pip install "bilinear-quantum[qi]"   # Quantum Inspire
 ```

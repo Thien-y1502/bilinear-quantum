@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.2.0
+
+- Added the public `bilinear_quantum.nn` namespace for reusable BQDL v5 Torch
+  layers, blocks, networks, and neural task heads.
+- Preserved the 34 stable top-level task constructors and the documented
+  `import bilinear_quantum as blq` interface.
+- Added PennyLane to the optional simulator dependency group for later parity
+  validation.
+- Hardware-QPU execution, application-dataset SOTA, and quantum advantage are
+  not claims of this release.
+
 ## 4.1.0
 
 - Routed all 34 public APIs through the shared BQDL v5 two-register PyTorch
